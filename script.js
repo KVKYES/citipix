@@ -1,31 +1,29 @@
-$(document).ready(function() {
-
-var city = ?;
-
-$('.entry').on('submit', function(event){
-  e.preventDefault();
-  addBackgroundImage();
-})
+// define function (on.submit) 
+// define variable (input city). 
+// reteive input value.(adds matching city background)
 
 
-if (user submits "Austin" or "ATX"){
- $('body').css('backgroundImage',../images/austin.jpg);
+// $(document).ready(function() {
+$('#enter-city').on('submit', function(e){
+	e.preventionDefault();
+	var city = $('#city-type').val();
+
+	$('body').removeClass();
+
+
+if (city === 'NYC' || city 'new york city' || city === 'New York') {
+$('body').addClass('nyc');
 }
-
-else if (user submits "Los Angeles" or "LA" or "LAX"){
- $('body').css('backgroundImage',../images/la.jpg);
+if (city === 'SF' || city 'San Francisco' || city === 'Bay Area') {
+$('body').addClass('sf');
 }
-
-else if (user submits "New York" or "New York City" or "NYC"){
- $('body').css('backgroundImage',../images/nyc.jpg);
+if (city === 'SYD' || city ==='Sydney') {
+$('body').addClass('sydney');
 }
-
-else if (user submits "San Francisco" or "SF" or "Bay Area"){
- $('body').css('backgroundImage',../images/sf.jpg);
+else if (city === 'Austin' || city === 'Austin') {
+$('body').addClass('austin');
 }
-
-else if (user submits "Sydney" or "SYD"){
- $('body').css('backgroundImage',../images/sydney.jpg);
+if (city === 'LA' || 'LAX' || city === 'Los Angeles') {
+$('body').addClass('la');
 }
-
 });
