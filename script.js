@@ -31,33 +31,35 @@ $(document).ready(function() {
 //create array of cities
 var cities = ["NYC", "SF", "LA", "ATX", "SYD"];
 // console.log(cities[2]);
+//append here for the drop-down menu
+	$('.#city-type').append('<option>Select A City</option>');
 // set up a "for" loop as instructions for the computer to find the matching city.
-
-for (var i = 0; i < cities.length; i++){
-	console.log(cities[i]);
-$('.city-options').append('<option val=" '+cities[1]+'">cities[i]</option>');
-+};
+	for (var i = 0; i < cities.length; i++){
+	// console.log(cities[i]);
+	$('#city-type').append('<option val=' +cities[i]+ '>'+ cities[i] + '</option>');
+	$('#city-type').append('<option>'+cities[i]+'</option>');
+}
 //on entering "city, the goal is for the background to change to that matching city
-$('#enter-city').on('change', function(e){
-	e.preventionDefault();
-//the id "city-type" appears as the user types "SF" or "NYC"...or whichever city
-	$('#city-type').val();
-});
+$('#enter_city').on('change', function(e){
+	e.preventDefault();
+	//the id "city-type" appears as the user types "SF" or "NYC"...(or whichever city), from the image url.
+	var city = $('#city-type').val().toLowerCase();
+	$('body').removeClass();
 
 
-if (city === 'nyc' || city === 'new york city' || city === 'New York') {
+if (city === 'NYC' || city === 'new york city' || city === 'new york') {
 $('body').addClass('nyc');
 }
-else if (city === 'sf' || city === 'San Francisco' || city === 'Bay Area') {
+else if (city === 'SF' || city === 'san francisco' || city === 'bay area') {
 $('body').addClass('sf');
 }
-else if (city === 'syd' || city === 'Sydney') {
+else if (city === 'SYD' || city === 'sydney') {
 $('body').addClass('sydney');
 }
-else if (city === 'austin' || city === 'Austin') {
+else if (city === 'ATX' || city === 'austin') {
 $('body').addClass('austin');
 }
-else if (city === 'la' || city === 'LAX' || city === 'Los Angeles') {
+else if (city === 'LA' || city === 'LAX' || city === 'los angeles') {
 $('body').addClass('la');
 }
 });
